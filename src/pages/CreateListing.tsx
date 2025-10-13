@@ -193,7 +193,7 @@ const CreateListing = () => {
             </div>
 
             <div className="space-y-2">
-              <Label>Images (up to 5)</Label>
+              <Label>Images (up to 3)</Label>
               <div className="grid grid-cols-5 gap-2">
                 {previewUrls.map((url, index) => (
                   <div key={index} className="relative aspect-square">
@@ -211,7 +211,7 @@ const CreateListing = () => {
                     </button>
                   </div>
                 ))}
-                {images.length < 5 && (
+                {images.length < 3 && (
                   <label className="aspect-square border-2 border-dashed rounded-lg flex items-center justify-center cursor-pointer hover:border-primary transition-colors">
                     <input
                       type="file"

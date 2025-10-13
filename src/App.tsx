@@ -10,6 +10,10 @@ import Dashboard from "./pages/Dashboard";
 import Browse from "./pages/Browse";
 import ProductDetail from "./pages/ProductDetail";
 import CreateListing from "./pages/CreateListing";
+import MyListings from "./pages/MyListings";
+import Messages from "./pages/Messages";
+import Exchanges from "./pages/Exchanges";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,10 +32,10 @@ const App = () => (
             <Route path="/browse" element={<Browse />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/create-listing" element={<CreateListing />} />
-            <Route path="/my-listings" element={<div>My Listings - Coming Soon</div>} />
-            <Route path="/messages" element={<div>Messages - Coming Soon</div>} />
-            <Route path="/exchanges" element={<div>Exchanges - Coming Soon</div>} />
-            <Route path="/profile" element={<div>Profile - Coming Soon</div>} />
+            <Route path="/my-listings" element={<MyListings />} />
+            <Route path="/messages" element={<Messages />} />
+            <Route path="/exchanges" element={<Exchanges />} />
+            <Route path="/profile" element={<Profile />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

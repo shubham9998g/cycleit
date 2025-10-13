@@ -125,7 +125,7 @@ const Browse = () => {
           No products found. Try adjusting your filters.
         </div>
       ) : (
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
@@ -140,37 +140,30 @@ const ProductCard = ({ product }: { product: Product }) => {
 
   return (
     <Link to={`/product/${product.id}`}>
-      <Card className="overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1">
+      <Card className="product-card max-w-xs w-full sm:max-w-[180px] min-h-[300px] max-h-[300px] overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 flex flex-col">
         <div className="aspect-square overflow-hidden bg-muted">
           <img
             src={imageUrl}
             alt={product.title}
-            className="h-full w-full object-cover transition-transform hover:scale-105"
+            className="h-full w-full object-contain object-center transition-transform hover:scale-105"
+            style={{ objectFit: "contain", objectPosition: "center" }}
           />
         </div>
-        <CardContent className="p-4">
-          <div className="flex items-start justify-between gap-2 mb-2">
-            <h3 className="font-semibold line-clamp-1">{product.title}</h3>
-            <Badge variant="secondary" className="capitalize shrink-0">
+        <CardContent className="p-2 sm:p-3">
+          <div className="flex items-start justify-between gap-2 mb-1">
+            <h3 className="font-semibold text-base line-clamp-1">{product.title}</h3>
+            <Badge variant="secondary" className="capitalize text-xs py-0.5 px-2 shrink-0">
               {product.condition}
             </Badge>
           </div>
-          <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
+          <p className="text-xs text-muted-foreground line-clamp-2 mb-2">
             {product.description}
           </p>
-          <div className="flex items-center justify-between text-sm">
-            <div className="flex items-center gap-2">
-              <img
-                src={product.profiles.avatar_url || "/placeholder.svg"}
-                alt={product.profiles.username}
-                className="h-6 w-6 rounded-full"
-              />
-              <span className="text-muted-foreground">@{product.profiles.username}</span>
-            </div>
+          <div className="flex items-center justify-end text-xs">
             {product.location && (
               <div className="flex items-center gap-1 text-muted-foreground">
                 <MapPin className="h-3 w-3" />
-                <span className="text-xs">{product.location}</span>
+                <span className="text-[10px]">{product.location}</span>
               </div>
             )}
           </div>

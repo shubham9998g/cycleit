@@ -15,6 +15,7 @@ import Messages from "./pages/Messages";
 import Exchanges from "./pages/Exchanges";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -35,7 +36,8 @@ const App = () => (
             <Route path="/my-listings" element={<MyListings />} />
             <Route path="/messages" element={<Messages />} />
             <Route path="/exchanges" element={<Exchanges />} />
-            <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/about" element={<About />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -20,7 +20,7 @@ const Landing = () => {
           <div className="hidden md:flex items-center gap-8">
             <Link className="hover:text-primary transition-colors font-medium" to="/">Home</Link>
             <Link className="hover:text-primary transition-colors font-medium" to="/browse">Browse</Link>
-            <Link className="hover:text-primary transition-colors font-medium" to="/#about">About</Link>
+            <Link className="hover:text-primary transition-colors font-medium" to="/about">About</Link>
             <Link className="hover:text-primary transition-colors font-medium" to="/#contact">Contact</Link>
           </div>
           <div className="flex items-center gap-2">
